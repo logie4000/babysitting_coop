@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+henry:
+  id: 1
+  first_name: Henry
+  last_name: Rollins
+  email: henry_rollins@blackflag.com
+  fingerprint: <%= Digest.SHA256('damaged') %>
+
+ian:
+  id: 2
+  first_name: Ian
+  last_name: Mackaye
+  email: ian_mackaye@minorthreat.com
+  fingerprint: <%= Digest.SHA256('outofstep') %>

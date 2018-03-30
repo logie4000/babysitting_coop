@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  account_id: 1 
+  fingerprint: <%= Digest.SHA256('abcde') %>
+  value: 1
+
+two:
+  account: 2
+  fingerprint: <%= Digest.SHA256('fghij') %>
+  value: 1
