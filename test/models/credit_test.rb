@@ -13,4 +13,9 @@ class CreditTest < ActiveSupport::TestCase
 
     assert user.nil?
   end
+
+  test "new credit should have fingerprint" do
+    credit = Credit.new()
+    assert !credit[:fingerprint].blank?
+  end
 end

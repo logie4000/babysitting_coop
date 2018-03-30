@@ -1,11 +1,12 @@
 require 'digest'
 
 class Credit < ApplicationRecord
-  has_and_belongs_to_many :transactions
+  has_and_belongs_to_many :credit_transactions
   belongs_to :account
 
+  after_initialize :init_credit
 
-  def after_initialize
+  def init_credit
     self[:fingerprint] = Credit.generate_fingerprint
   end
 

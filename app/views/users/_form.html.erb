@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :fingerprint %>
-    <%= form.text_field :fingerprint, id: :user_fingerprint %>
+    <%= h(@user.fingerprint) %>
   </div>
 
   <div class="actions">

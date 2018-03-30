@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class AccountTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "new account should have fingerprint" do
+    account = Account.new()
+    assert !account[:fingerprint].blank?
+  end
 end

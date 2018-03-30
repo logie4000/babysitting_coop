@@ -1,0 +1,17 @@
+<%= form_with(model: credit_transaction, local: true) do |form| %>
+  <% if credit_transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(credit_transaction.errors.count, "error") %> prohibited this credit_transaction from being saved:</h2>
+
+      <ul>
+      <% credit_transaction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,11 +1,11 @@
-class Transaction < ApplicationRecord
+class CreditTransaction < ApplicationRecord
   belongs_to :sender, :class_name => 'Account'
   belongs_to :recipient, :class_name => 'Account'
   has_and_belongs_to_many :credits 
 
   def to_block
     json = self.to_json
-    block = Digest.SHA256.hexdigest(json)
+    block = Digest::SHA256.hexdigest(json)
     return block
   end
 

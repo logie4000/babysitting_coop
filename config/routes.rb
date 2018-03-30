@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :transactions
+  resources :transactions, controller: 'credit_transactions'
   resources :credits, only: [:index, :show, :create, :edit, :update] do
-    member do
+    collection do
       get :mint
     end
   end
@@ -17,11 +17,13 @@ Rails.application.routes.draw do
         end
       end
   
-      resources :transactions, only: [:index, :show, :create, :update]
+      resources :credit_transactions, only: [:index, :show, :create, :update]
       resources :accounts, only: [:index, :show, :create, :update]
       resources :users, only: [:index, :show, :create, :update]
     end
   end
+
+  resources :credit_transactions
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
