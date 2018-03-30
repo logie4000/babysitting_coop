@@ -1,15 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+<% require 'digest' %>
 
 henry:
   id: 1
   first_name: Henry
   last_name: Rollins
   email: henry_rollins@blackflag.com
-  fingerprint: <%= Digest.SHA256('damaged') %>
+  fingerprint: <%= Digest::SHA256.hexdigest('damaged') %>
 
 ian:
   id: 2
   first_name: Ian
   last_name: Mackaye
   email: ian_mackaye@minorthreat.com
-  fingerprint: <%= Digest.SHA256('outofstep') %>
+  fingerprint: <%= Digest::SHA256.hexdigest('outofstep') %>

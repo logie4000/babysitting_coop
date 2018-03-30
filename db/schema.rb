@@ -10,35 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180330143906) do
+ActiveRecord::Schema.define(version: 20180329190713) do
 
-  create_table "accounts", force: :cascade do |t|
-    t.string "fingerprint"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "credits", force: :cascade do |t|
-    t.integer "account_id"
-    t.string "fingerprint"
-    t.integer "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["account_id"], name: "index_credits_on_account_id"
-    t.index ["fingerprint"], name: "index_credits_on_fingerprint"
-  end
-
-  create_table "transactions", force: :cascade do |t|
-    t.integer "sender_id"
-    t.integer "recipient_id"
-    t.string "chain_hash"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["recipient_id"], name: "index_transactions_on_recipient_id"
-    t.index ["sender_id"], name: "index_transactions_on_sender_id"
-  end
-
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -46,8 +20,6 @@ ActiveRecord::Schema.define(version: 20180330143906) do
     t.integer "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "api_key"
-    t.index ["api_key"], name: "index_users_on_api_key"
   end
 
 end

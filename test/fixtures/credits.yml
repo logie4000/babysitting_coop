@@ -1,11 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+<% require 'digest' %>
 
 one:
   account_id: 1 
-  fingerprint: <%= Digest.SHA256('abcde') %>
+  fingerprint: <%= Digest::SHA256.hexdigest('abcde') %>
   value: 1
 
 two:
-  account: 2
-  fingerprint: <%= Digest.SHA256('fghij') %>
+  account_id: 2
+  fingerprint: <%= Digest::SHA256.hexdigest('fghij') %>
   value: 1

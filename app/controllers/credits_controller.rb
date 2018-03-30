@@ -15,7 +15,6 @@ class CreditsController < ApplicationController
   # GET /credits/new
   def mint 
     @credit = Credit.new
-    @credit[:fingerprint] = Credit.generate_fingerprint
   end
 
   # GET /credits/1/edit
